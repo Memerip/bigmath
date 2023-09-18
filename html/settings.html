@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIG Math - Settings</title>
+    <meta name="description" content="Biggest baddest coolest proxy in the world :0" />
+    <link rel="shortcut icon" id="favicon" href="assets/imgs/big.png">
+    <link rel="stylesheet" href="assets/css/settings.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" crossorigin="BIG" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="BIG"></script>
+    <script src="https://kit.fontawesome.com/ead198d1a6.js" crossorigin="anonymous"></script>
+  </head> 
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <a class="logo" href="/">BIG Math</a>
+      <ul>
+        <li><a href="/proxy">Proxy</a></li>
+        <li><a href="/games">Games</a></li>
+        <li><a href="/apps">Apps</a></li>
+        <li><a href="/settings">Settings</a></li>
+      </ul>
+    </nav>
+    <div class="header-container">
+      <h1>
+      </h1>
+    </div>
+    <div class="settings-container">
+      <div class="settings-box">
+        <div class="settings-box-title">Tab Cloaker</div>
+        <input type="text" id="titleInput" placeholder="Tab Title">
+        <input type="text" id="faviconInput" placeholder="Tab Icon">
+        <button id="saveCloak">Save</button>
+      </div>
+      <div class="settings-box">
+        <div class="settings-box-title">Panic Button</div>
+        <input type="text" placeholder="Panic Key" id="eventKeyInput" value="">
+        <input type="text" placeholder="Panic Link" id="linkInput" value="">
+        <div class="panic">
+          <input type="button" value="Save" onclick="saveEventKey(); redirectToMainDomain();">
+        </div>
+      </div>
+      <div class="settings-box">
+        <div class="settings-box-title">About Blank Cloak</div>
+        <button onclick="goBlank()">Go About:Blank</button>
+      </div>
+      <div class="settings-box">
+        <div class="settings-box-title">History Flooder</div>
+        <button onclick="HF()">Flood History</button>
+      </div>
+      <div class="settings-box">
+        <div class="settings-box-title">Browser</div>
+        <select class="select-browser" id="browsers" onchange="changeSearch(this)">
+          <option>Google</option>
+          <option>DuckDuckGo</option>
+          <option>Brave</option>
+          <option>Bing</option>
+          <option>Yahoo</option>
+        </select>
+        <button id="saveBrowser">Save</button>
+      </div>
+      <div class="settings-box">
+        <div class="settings-box-title">Coming Soon...</div>
+      </div>
+    </div>
+  </body>
+  <script async src="assets/js/abc.js"></script>
+  <script async src="assets/js/browser.js"></script>
+  <script async src="assets/js/cloak.js"></script>
+  <script async src="assets/js/hf.js"></script>
+  <script async src="assets/js/panic.js"></script>
+</html>
