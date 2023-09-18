@@ -1,63 +1,64 @@
-import createBareServer from '@tomphttp/bare-server-node'
-import http from 'node:http'
-import { createRequire } from "module"
-const require = createRequire(import.meta.url)
-const port = process.env.PORT || 80
+import express from "express";
+import http from "node:http";
+import createBareServer from "@tomphttp/bare-server-node";
+import path from "node:path";
+import * as dotenv from "dotenv";
+dotenv.config();
 
-// Create Bare
-const bare = createBareServer('/bare/')
+const __dirname = process.cwd();
+const server = http.createServer();
+const app = express(server);
+const bareServer = createBareServer("/bare/");
 
-import express from 'express'
-const app = express();
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
-app.use(express.static("./public"));
+app.use(express.static(path.join(__dirname, "./public")));
 
-app.get('/', (req, res) => {
-  res.sendFile("index.html", { root: "./html" })
-})
+const routes = [
+  { path: "/", file: "index.html" },
+  { path: "/proxy", file: "proxy.html" },
+  { path: "/games", file: "games.html" },
+  { path: "/apps", file: "apps.html" },
+  { path: "/settings", file: "settings.html" },
+  { path: "/404", file: "404.html" },
+];
 
-app.get('/proxy', (req, res) => {
-  res.sendFile("proxy.html", { root: "./html" })
-})
+routes.forEach((route) => {
+  app.get(route.path, (req, res) => {
+    res.sendFile(path.join(__dirname, "./html", route.file));
+  });
+});
 
-app.get('/games', (req, res) => {
-  res.sendFile("games.html", { root: "./html" })
-})
+app.get("/*", (req, res) => {
+  res.redirect("/404");
+});
 
-app.get('/apps', (req, res) => {
-  res.sendFile("apps.html", { root: "./html" })
-})
-
-app.get('/settings', (req, res) => {
-  res.sendFile("settings.html", { root: "./html" })
-})
-
-app.get('/qa', (req, res) => {
-  res.sendFile("qa.html", { root: "./html" })
-})
-
-app.use((req, res) => {
-  res.status(404).sendFile("404.html", { root: "./html" })
-})
-
-const httpServer = http.createServer()
-
-httpServer.on('request', (req, res) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeRequest(req, res)
+// Bare Server 
+server.on("request", (req, res) => {
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeRequest(req, res);
   } else {
-    app(req, res)
-  }
-})
-
-httpServer.on('upgrade', (req, socket, head) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeUpgrade(req, socket, head)
-  } else {
-    socket.end()
+    app(req, res);
   }
 });
-httpServer.listen({ port: port }, () => { 
-  console.log(`\x1b[42m\x1b[1mBIG Math ----- Port: ${port}\x1b[0m`); 
-  console.log('\x1b[41m\x1b[5m\x1b[1m\x1b[33mPLEASE NOTE: BIG Math is in a development stage. Expect bugs!\x1b[0m'); 
-})
+
+server.on("upgrade", (req, socket, head) => {
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeUpgrade(req, socket, head);
+  } else {
+    socket.end();
+  }
+});
+
+server.on("listening", () => {
+  console.log(`BIG Math running at http://localhost:${process.env.PORT}`);
+});
+
+server.listen({
+  port: 8080,
+});
