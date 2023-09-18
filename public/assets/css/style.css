@@ -1,0 +1,299 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+nav * {
+  padding: 0;
+  margin: 0;
+}
+
+.form-container {
+  margin: auto;
+  height: 100vh;
+  width:100vh;
+  display:flex;
+  transform: translate(-28%, -35%);
+}
+
+form {
+  border: none;
+}
+
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.7;
+}
+
+body { 
+  min-height: 100vh;
+  background: #0f0f0f;
+}
+
+h1 {
+  text-align: center;
+  top: 100px;
+  font-size: 75px;
+  font-family: 'Poppins';
+  color: #ffffff;
+}
+
+h2 {
+  text-align: center;
+  top: 50px;
+  font-family: 'Poppins';
+  font-size: 50px;
+  color: #ffffff;
+}
+
+h3 {
+  text-align: center;
+  top: 100px;
+  font-family: 'Poppins';
+  color: #ffffff;
+}
+
+p {
+  font-family: 'Poppins';
+  color: #ffffff;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.submit-button {
+  background: transparent;
+  border: none;
+  width: 55px;
+  height: 60px;
+  color: black;
+  margin-left:5px;
+}
+
+.announcement {
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  background: white;
+  color: black;
+  font-family: 'Poppins';
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  font-size: 1.1em;
+}
+
+.announcement a { 
+  color: #ccc; 
+}
+
+.announcement p { 
+  color: black; 
+}
+
+.announcement a:hover {
+  color: gray;
+}
+
+nav{
+  background: black;
+  height: 80px;
+  width: 100%;
+}
+
+.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  font-weight: bold;
+  font-family: 'Poppins';
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 7px 13px;
+  margin: 0px 100px;
+}
+
+nav ul{
+  float: right;
+  margin-right: 20px;
+  text-align: center;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-family: 'Poppins';
+  text-decoration: none;
+}
+
+a.active{
+  background: white;
+  color: black;
+}
+
+a:hover{
+  transition: background-color 0.4s,
+  color 0.3s;
+  color: black;
+  background: white;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #292828;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0f0f0f;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+.qa-h1 {
+  text-align: center;
+  font-family: 'Poppins';
+  font-size: 35px;
+  color: #ffffff;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.question h1{
+  text-align: left;
+  font-family: 'Poppins';
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.answer {
+  margin-bottom: 30px;
+}
+
+.answer p{
+  text-align: left;
+  font-family: 'Poppins';
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.landing {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  font-family: 'Poppins';
+}
+
+.landing h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.landing p {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.landing a {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  font-size: 24px;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.landing a:hover {
+  background-color: #ccc;
+  ;
+}
+
+.not-found {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 100px;
+}
+
+.not-found h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.not-found p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.not-found a {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.not-found a:hover {
+  background-color: #ccc;
+}

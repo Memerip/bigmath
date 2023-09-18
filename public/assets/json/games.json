@@ -1,0 +1,62 @@
+[
+    {
+      "image": "/assets/imgs/games/slope.webp",
+      "loc": "/uv/play.html",
+      "title": "Slope",
+      "playurl": "/uv/load.html?site=https://kdata1.com/2020/05/slope/"
+    },
+    {
+      "image": "/assets/imgs/games/bitlife.webp",
+      "loc": "/uv/play.html",
+      "title": "Bitlife",
+      "playurl": "/uv/load.html?site=https://xlegends.github.io/bitlife/"
+    },
+    {
+      "image": "/assets/imgs/games/1v1lol.png",
+      "loc": "/uv/play.html",
+      "title": "1v1.lol",
+      "playurl": "/uv/load.html?site=https://1v1.lol"
+    },
+    {
+      "image": "/assets/imgs/games/btd4.webp",
+      "loc": "/uv/play.html",
+      "title": "BTD 4",
+      "playurl": "/uv/load.html?site=https://en.gameslol.net/data/bloons-td-4/index.html"
+    },
+    {
+      "image": "/assets/imgs/games/crossyroad.webp",
+      "loc": "/uv/play.html",
+      "title": "Crossy Road",
+      "playurl": "/uv/load.html?site=https://5dd2e1e3-015f-11ea-ad56-9cb6d0d995f7.poki-gdn.com/169dc11d-e718-4b36-9e60-d5ed5bc07a31/index.html"
+    },
+    {
+      "image": "/assets/imgs/games/cookieclicker.webp",
+      "loc": "/uv/play.html",
+      "title": "Cookie Clicker",
+      "playurl": "/uv/load.html?site=https://orteil.dashnet.org/cookieclicker/"
+    },
+    {
+      "image": "/assets/imgs/games/chess.webp",
+      "loc": "/uv/play.html",
+      "title": "Chess.com",
+      "playurl": "/uv/load.html?site=https://chess.com"
+    },
+    {
+      "image": "/assets/imgs/games/dogeminer1.webp",
+      "loc": "/uv/play.html",
+      "title": "Dogeminer 1",
+      "playurl": "/uv/load.html?site=https://dogeminer.se/"
+    },
+    {
+      "image": "/assets/imgs/games/drifthunters.webp",
+      "loc": "/uv/play.html",
+      "title": "Drift Hunters",
+      "playurl": "/uv/load.html?site=https://webglmath.github.io/drift-hunters/"
+    },
+    {
+      "image": "/assets/imgs/games/drivemad.webp",
+      "loc": "/uv/play.html",
+      "title": "Drive Mad",
+      "playurl": "/uv/load.html?site=https://raw.githack.com/3kh0/3kh0-assets/main/drive-mad/index.html"
+    }
+  ]

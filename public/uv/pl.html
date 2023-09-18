@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BIG Math</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    #ifr {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="/uv/index.js"></script>
+</head>
+<body>
+  <iframe id="ifr"></iframe>
+  <script>
+    if ('serviceWorker' in navigator) {
+      let url = atob(decodeURIComponent(window.location.hash.slice(1)));
+      var i = document.getElementById('ifr');
+      navigator.serviceWorker.register('/uv.sw-handler.js', {scope: __uv$config.prefix}).then(() => {
+        i.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+        i.onload = function() {
+          window.location.hash = btoa(__uv$config.decodeUrl(i.contentWindow.location.href.split('/')[4]));
+        };
+      });
+    }
+  </script>
+</body>
+</html>

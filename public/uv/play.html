@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIG Math</title>
+  <link rel="shortcut icon" href="/assets/imgs/big.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="/assets/js/cloak.js"></script>
+  <script src="/assets/js/panic.js"></script>
+  <script src="/assets/js/index.js" defer></script>
+  <style>
+    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      background-color: #0f0f0f;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    #play-container {
+      position: relative;
+      width: 90vw;
+      height: 70vh;
+      max-width: 1000px;
+      max-height: 800px;
+      border: 2px solid #303030;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    #loading-text {
+      font-size: 28px;
+      font-family: 'Poppins';
+    }
+
+    @keyframes loadingAnimation {
+
+      0%,
+      100% {
+        content: "Loading.";
+      }
+
+      25% {
+        content: "Loading..";
+      }
+
+      50% {
+        content: "Loading...";
+      }
+
+      75% {
+        content: "Loading....";
+      }
+    }
+
+    #loading-text::after {
+      content: "Loading.";
+      animation: loadingAnimation 2s infinite;
+    }
+
+    #play-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: none;
+    }
+
+    #fullscreen-button {
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    #fullscreen-button-container {
+      margin-top: 10px;
+    }
+
+    #fullscreen-button:hover {
+      color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <a class="logo" href="/">BIG Math</a>
+    <ul>
+      <li><a href="/proxy">Proxy</a></li>
+      <li><a href="/games">Games</a></li>
+      <li><a href="/apps">Apps</a></li>
+      <li><a href="/settings">Settings</a></li>
+    </ul>
+  </nav>
+  <div id="play-container">
+    <div id="loading-text"></div>
+    <iframe id="play-frame" src="" allowfullscreen></iframe>
+  </div>
+  <div id="fullscreen-button-container">
+    <i id="fullscreen-button" class="fa-solid fa-expand" onclick="toggleFullscreen()"></i>
+  </div <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js">
+  </script>
+
+  <script>
+    if (typeof localStorage !== "undefined") {
+      const playValue = localStorage.getItem("play");
+
+      if (playValue !== null) {
+        console.log("Value of 'play' key:", playValue);
+
+        const playFrame = document.getElementById("play-frame");
+
+        if (playFrame) {
+          playFrame.src = playValue;
+          console.log("Successfully set the 'src' attribute of the iframe.");
+        } else {
+          console.log("Could not find an iframe with the id 'play-frame'.");
+        }
+      } else {
+        console.log("The 'play' key does not exist in localStorage. Redirecting to /home.");
+        window.location.href = "/home";
+      }
+    } else {
+      console.log("localStorage is not available in this browser.");
+    }
+
+    const playFrame = document.getElementById('play-frame');
+    const fullscreenButton = document.getElementById('fullscreen-button');
+    const loadingText = document.getElementById('loading-text');
+    let isFullscreen = false;
+
+    setTimeout(() => {
+      loadingText.style.display = 'none';
+      playFrame.style.display = 'block';
+    }, 4000);
+
+    function toggleFullscreen() {
+      if (isFullscreen) {
+        exitFullscreen();
+      } else {
+        enterFullscreen();
+      }
+    }
+
+    function enterFullscreen() {
+      isFullscreen = true;
+      if (playFrame.requestFullscreen) {
+        playFrame.requestFullscreen();
+      } else if (playFrame.mozRequestFullScreen) { /* Firefox */
+        playFrame.mozRequestFullScreen();
+      } else if (playFrame.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        playFrame.webkitRequestFullscreen();
+      } else if (playFrame.msRequestFullscreen) { /* IE/Edge */
+        playFrame.msRequestFullscreen();
+      }
+    }
+
+    function exitFullscreen() {
+      isFullscreen = false;
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { /* Firefox */
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { /* Chrome, Safari & Opera */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE/Edge */
+        document.msExitFullscreen();
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "bigproxy",
+  "version": "1.0.0",
+  "description": "proxy",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "proxy"
+  ],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "homepage": "",
+  "dependencies": {
+    "@tomphttp/bare-server-node": "^1.0.4-deps1",
+    "express": "^4.18.1",
+    "jquery": "^3.6.1",
+    "jsdom": "^21.1.0",
+    "ws": "^8.12.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

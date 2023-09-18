@@ -1,0 +1,104 @@
+[
+    {
+      "image": "/assets/imgs/apps/youtube.jpg",
+      "loc": "/uv/play.html",
+      "title": "Youtube",
+      "playurl": "/uv/load.html?site=https://youtube.com"
+    },
+    {
+      "image": "/assets/imgs/apps/spotify.jpg",
+      "loc": "/uv/play.html",
+      "title": "Spotify",
+      "playurl": "/uv/load.html?site=https://open.spotify.com"
+    },
+    {
+      "image": "/assets/imgs/apps/discord.jpg",
+      "loc": "/uv/play.html",
+      "title": "Discord",
+      "playurl": "/uv/load.html?site=https://discord.com"
+    },
+    {
+      "image": "/assets/imgs/apps/vsc.png",
+      "loc": "/uv/play.html",
+      "title": "VS Code",
+      "playurl": "/uv/load.html?site=https://vscode.dev"
+    },
+    {
+      "image": "/assets/imgs/apps/tiktok.png",
+      "loc": "/uv/play.html",
+      "title": "TikTok",
+      "playurl": "/uv/load.html?site=https://tiktok.com"
+    },
+    {
+      "image": "/assets/imgs/apps/github.png",
+      "loc": "/uv/play.html",
+      "title": "GitHub",
+      "playurl": "/uv/load.html?site=https://github.com"
+    },
+      {
+      "image": "/assets/imgs/apps/twitch.webp",
+      "loc": "/uv/play.html",
+      "title": "Twitch",
+      "playurl": "/uv/load.html?site=https://twitch.tv"
+    },
+    {
+      "image": "/assets/imgs/apps/pinterest.png",
+      "loc": "/uv/play.html",
+      "title": "Pinterest",
+      "playurl": "/uv/load.html?site=https://pinterest.com"
+    },
+    {
+      "image": "/assets/imgs/apps/reddit.png",
+      "loc": "/uv/play.html",
+      "title": "Reddit",
+      "playurl": "/uv/load.html?site=https://reddit.com"
+    },
+    {
+      "image": "/assets/imgs/apps/soundcloud.png",
+      "loc": "/uv/play.html",
+      "title": "SoundCloud",
+      "playurl": "/uv/load.html?site=https://soundcloud.com"
+    },
+    {
+      "image": "/assets/imgs/apps/amazon.png",
+      "loc": "/uv/play.html",
+      "title": "Amazon",
+      "playurl": "/uv/load.html?site=https://amazon.com"
+    },
+    {
+      "image": "/assets/imgs/apps/telegram.png",
+      "loc": "/uv/play.html",
+      "title": "Telegram",
+      "playurl": "/uv/load.html?site=https://web.telegram.org"
+    },
+    {
+      "image": "/assets/imgs/apps/pixlr.png",
+      "loc": "/uv/play.html",
+      "title": "Pixlr",
+      "playurl": "/uv/load.html?site=https://pixlr.com"
+    },
+    {
+      "image": "/assets/imgs/apps/hbomax.png",
+      "loc": "/uv/play.html",
+      "title": "HBO Max",
+      "playurl": "/uv/load.html?site=https://hbomax.com"
+    },
+    {
+      "image": "/assets/imgs/apps/poki.png",
+      "loc": "/uv/play.html",
+      "title": "Poki",
+      "playurl": "/uv/load.html?site=https://poki.com"
+    },
+    {
+      "image": "/assets/imgs/apps/tumblr.png",
+      "loc": "/uv/play.html",
+      "title": "Tumblr",
+      "playurl": "/uv/load.html?site=https://tumblr.com"
+    },
+    {
+      "image": "/assets/imgs/apps/paramount.png",
+      "loc": "/uv/play.html",
+      "title": "Paramount Plus",
+      "playurl": "/uv/load.html?site=https://paramountplus.com"
+    }
+  ]

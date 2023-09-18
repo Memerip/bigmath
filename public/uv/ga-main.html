@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BIG Math</title>
+    <link rel="shortcut icon" href="/assets/imgs/big.png">
+    <link rel="stylesheet" href="/assets/css/uv.css">
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/uv/index.js"></script>
+    <script src="https://kit.fontawesome.com/ead198d1a6.js" crossorigin="anonymous"></script>
+  </head>
+  <body style="overflow:hidden;">
+    <div class="loading">
+      <img src="/assets/imgs/loading.svg" id="loading-img" style="z-index:2;">
+      <p id="message"></p>
+    </div>
+    <div id="align">
+      <nav id="nav">
+        <a href="/"><i class="fa-solid fa-arrow-left fa-xl" style="color: white; margin-right: auto; margin-left: 10px;"></i></a>
+        <span id="m" style="margin: auto;"></span>
+        <a onclick="fullscreen()"><i class="fa-solid fa-expand" style="color: white; margin-left: auto; margin-right: 45px; font-size: 20px;"></i></a>
+      </nav>
+      <iframe id="ifr"></iframe>
+    </div>
+    
+      <script>
+      if ('serviceWorker' in navigator) {
+        var i = document.getElementById('ifr');
+        let url = atob(decodeURIComponent(window.location.hash.slice(1)));
+        console.log(url)
+        var i = document.getElementById('ifr');
+        navigator.serviceWorker.register('/uv.sw-handler.js', {scope: __uv$config.prefix}).then(() => {
+            
+            i.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+            var m = document.getElementById('m');
+          setTimeout(() => {
+            document.getElementById('loading-img').style.display = "none";
+          }, 2000)
+          setTimeout(() => {
+            document.getElementById('nav').style.display = 'flex';
+            i.style.display = 'block';
+            document.getElementById('align').style.display = "flex";
+          }, 2250)
+          i.onload = function() {
+            m.innerText = i.contentDocument.title;
+            window.location.hash = btoa(__uv$config.decodeUrl(i.contentWindow.location.href.split('/')[4]))
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
